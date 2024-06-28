@@ -52,4 +52,32 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	window.addEventListener('scroll', handleScroll)
+
+	function copyToClipboard(text) {
+		return navigator.clipboard.writeText(text)
+	}
+
+	// Найти все элементы с классом 'supply__address'
+	var supplyAddressElements = document.querySelectorAll('.supply__address')
+
+	// Добавить обработчик клика для каждого элемента
+	supplyAddressElements.forEach(function (element) {
+		element.addEventListener('click', function () {
+			var value = element.getAttribute('data-value')
+			var originalText = element.textContent // Сохранить оригинальный текст
+
+			if (value) {
+				copyToClipboard(value)
+					.then(function () {
+						element.textContent = 'Скопировано'
+						setTimeout(function () {
+							element.textContent = originalText
+						}, 3000) // Вернуть оригинальный текст через 3 секунды
+					})
+					.catch(function (err) {
+						console.error('Не удалось скопировать текст: ', err)
+					})
+			}
+		})
+	})
 })
