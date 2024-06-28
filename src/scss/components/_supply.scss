@@ -85,6 +85,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		transition: color 250ms ease-in-out;
 
 		&::after {
 			content: '';
@@ -101,6 +102,11 @@
 			white-space: normal;
 			word-break: break-all;
 			margin-top: 16px;
+		}
+
+		&:hover {
+			cursor: pointer;
+			color: var(--main-green);
 		}
 	}
 
