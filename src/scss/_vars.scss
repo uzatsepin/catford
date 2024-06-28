@@ -1,0 +1,16 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+	// base
+	--font-family: 'Russo One', sans-serif;
+	--content-width: 1600px;
+	--container-offset: 10px;
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+	// colors
+	--light-color: #fff;
+	--main-black: #0b0b0b;
+	--black-secondary: #070707;
+	--main-green: #30ff2c;
+	--green-hover: #17b026;
+}
